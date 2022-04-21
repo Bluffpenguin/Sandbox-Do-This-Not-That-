@@ -3,6 +3,7 @@ float buttonX1, buttonY1, ButtonWidth1, ButtonHeight1;
 float buttonX2, buttonY2, ButtonWidth2, ButtonHeight2;
 float rectDisplayX, rectDisplayY, rectDisplayWidth, rectDisplayHeight;
 float ellipseX, ellipseY, ellipseXDiameter, ellipseYDiameter;
+float x, y, xDiameter, yDiameter;
 //
 void setup() 
 {
@@ -38,10 +39,16 @@ void setup()
    rectDisplayY =appHeight*1/8;
    rectDisplayWidth =ButtonWidth1;
    rectDisplayHeight =ButtonWidth1;
-   ellipseX =appWidth;
-   ellipseY = appHeight;
-   ellipseXDiameter = appWidth;
-   ellipseYDiameter = appHeight;
+   ellipseX =appWidth*6/8;
+   ellipseY = rectDisplayY;
+   ellipseXDiameter = appWidth*1/8; //Note: formulae not square but same
+   ellipseYDiameter = appHeight*1/8;
+   float ellipseRectXCenter = ellipseX + ellipseXDiameter*1/2;
+   float ellipseRectYCenter = ellipseY + ellipseYDiameter*1/2;
+   x = ellipseRectXCenter;
+   y = ellipseRectYCenter;
+   xDiameter = ellipseXDiameter;
+   yDiameter = ellipseYDiameter;
 }//End setup
 //
 void draw() 
@@ -49,8 +56,8 @@ void draw()
   rect(buttonX1, buttonY1, ButtonWidth1, ButtonHeight1); //DIV: "Click Me"
   rect(buttonX2, buttonY2, ButtonWidth2, ButtonHeight2); //DIV: "Or Me"
   rect(rectDisplayX, rectDisplayY, rectDisplayWidth, rectDisplayHeight); //DIV: Display Rectangle
-  rect(ellipseX, ellipseY, ellipseXDiameter, ellipseYDiameter); //DIV: Display Circle
-  //ellipse()
+  rect(ellipseX, ellipseY, ellipseXDiameter, ellipseYDiameter); //DIV: Display Ellipse
+  ellipse(x, y, xDiameter, yDiameter);
 }//End draw
 //
 void keyPressed() {
