@@ -5,26 +5,34 @@ float buttonX2, buttonY2, ButtonWidth2, ButtonHeight2;
 void setup() 
 {
   //Display Geometry
-  fullScreen(); //size( 600, 400);  //displayWidth, displayHeight
+  size( 600, 400); //fullScreen();  //displayWidth, displayHeight
   //Display Orientation: Landscape, not portrait nor square
   println (displayWidth, displayHeight, width, height);
-  String ls="Landscape or Square", p="portrait", DO="DisplayOrientation:", instruct="Turn your phone";
-  int appWidth = displayWidth; //width
-  int appHeight = displayHeight; //height
+  String ls="Landscape or Square", p="portrait", DO="Display Orientation:", instruct="Dude, turn your phone";
+  int appWidth = width; //displayWidth
+  int appHeight = height; //displayHeight
   String orientation = ( appWidth >= appHeight) ? ls : p ; //Ternary Operator, repeats IF-ELSE
   println (DO, orientation );
-  println(appWidth, appHeight);
+  //if ( orientation==p ) println(instruct); //Testing the orientation variable
+  if (orientation==ls) 
+  {
+    println("Good to Go");
+  } else {//Break app if not landscape
+    println(instruct);
+    appWidth = appWidth*0;
+    appHeight = appHeight*0;
+  }
+  println("App Geometry is:", "\tApp Width", appWidth, "\t\tApp Height", appHeight);
   //
-  /*Population
-   buttonX1 = ;
-   buttonY1 = ;
-   ButtonWidth1 = ; 
-   ButtonHeight1 = ;
-   buttonX2 = ;
-   buttonY2 = ;
-   ButtonWidth2 = ;
-   ButtonHeight2 = ;
-   */
+  //Population
+   buttonX1 = appWidth;
+   buttonY1 = appHeight;
+   ButtonWidth1 = appWidth; 
+   ButtonHeight1 = appHeight;
+   buttonX2 = appWidth;
+   buttonY2 = appHeight;
+   ButtonWidth2 = appWidth;
+   ButtonHeight2 = appHeight;
 }//End setup
 //
 void draw() 
