@@ -13,7 +13,6 @@ void setup()
   int appHeight = height; //displayHeight
   String orientation = ( appWidth >= appHeight) ? ls : p ; //Ternary Operator, repeats IF-ELSE
   println (DO, orientation );
-  //if ( orientation==p ) println(instruct); //Testing the orientation variable
   if (orientation==ls) 
   {
     println("Good to Go");
@@ -25,20 +24,20 @@ void setup()
   println("App Geometry is:", "\tApp Width", appWidth, "\t\tApp Height", appHeight);
   //
   //Population
-   buttonX1 = appWidth;
-   buttonY1 = appHeight;
-   ButtonWidth1 = appWidth; 
-   ButtonHeight1 = appHeight;
-   buttonX2 = appWidth;
-   buttonY2 = appHeight;
-   ButtonWidth2 = appWidth;
-   ButtonHeight2 = appHeight;
+   buttonX1 = appWidth*1/4;
+   buttonY1 = appHeight*3/4;
+   ButtonWidth1 = appWidth*1/5; 
+   ButtonHeight1 = appHeight*1/5;
+   buttonX2 = appWidth*3/4;
+   buttonY2 = buttonY1;
+   ButtonWidth2 = ButtonWidth1;
+   ButtonHeight2 = ButtonHeight1;
 }//End setup
 //
 void draw() 
 {
-  //rect(buttonX1, buttonY1, ButtonWidth1, ButtonHeight1); //DIV: "Click Me"
-  //rect(buttonX2, buttonY2, ButtonWidth2, ButtonHeight2); //DIV: "Or Me"
+  rect(buttonX1, buttonY1, ButtonWidth1, ButtonHeight1); //DIV: "Click Me"
+  rect(buttonX2, buttonY2, ButtonWidth2, ButtonHeight2); //DIV: "Or Me"
   //rect(); //DIV: Display Rectangle
   //rect(); //DIV: Display Circle
 }//End draw
