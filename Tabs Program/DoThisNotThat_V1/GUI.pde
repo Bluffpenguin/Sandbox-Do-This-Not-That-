@@ -7,4 +7,6 @@ void GUI_draw()
   //rect(ellipseX, ellipseY, ellipseXDiameter, ellipseYDiameter); //DIV: Display Ellipse
   if (rectON==false && ellipseON==true) ellipse(x, y, xDiameter, yDiameter);
   //
+  textDraw();
+  //
 }//End GUI
