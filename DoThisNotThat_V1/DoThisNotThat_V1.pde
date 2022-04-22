@@ -7,7 +7,9 @@ float x, y, xDiameter, yDiameter;
 color black=#000000, white=#FFFFE1; //Night Mode, blue is 00, white it not night mode
 boolean rectON=false, ellipseON=false;
 PFont Buttonwordfont;
-String RectWords, EllipseWords;
+String RectWords = "Click Me";
+String EllipseWords = "Or Me";
+color orange = #FFA800;
 //
 void setup() 
 {
@@ -54,8 +56,6 @@ void setup()
   xDiameter = ellipseXDiameter;
   yDiameter = ellipseYDiameter;
   Buttonwordfont = createFont("Corbel", 48);
-  RectWords = "Click Me";
-  EllipseWords = "Or Me";
 }//End setup
 //
 void draw() 
@@ -63,13 +63,17 @@ void draw()
   background(black);
   rect(buttonX1, buttonY1, ButtonWidth1, ButtonHeight1); //DIV: "Click Me"
   rect(buttonX2, buttonY2, ButtonWidth2, ButtonHeight2); //DIV: "Or Me"
-  text(RectWords, buttonX1, buttonY1, ButtonWidth1, ButtonHeight1 );
-  text(EllipseWords, buttonX2, buttonY2, ButtonWidth2, ButtonHeight2);
   if (rectON==true && ellipseON==false) rect(rectDisplayX, rectDisplayY, rectDisplayWidth, rectDisplayHeight); //DIV: Display Rectangle
   //rect(ellipseX, ellipseY, ellipseXDiameter, ellipseYDiameter); //DIV: Display Ellipse
   if (rectON==false && ellipseON==true) ellipse(x, y, xDiameter, yDiameter);
+  //
+  fill(orange);
   textAlign(CENTER, CENTER);
-  textFont(Buttonwordfont, 70);
+  textFont(Buttonwordfont, 25);
+  //
+  text(RectWords, buttonX1, buttonY1, ButtonWidth1, ButtonHeight1 );
+  text(EllipseWords, buttonX2, buttonY2, ButtonWidth2, ButtonHeight2);
+  fill(white);
 }//End draw
 //
 void keyPressed() {
