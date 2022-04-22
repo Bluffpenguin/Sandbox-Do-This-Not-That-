@@ -17,24 +17,13 @@ void setup()
   size( 600, 400); //fullScreen();  //displayWidth, displayHeight
   displayOrientation();
   population();
+  textSetup();
 }//End setup
 //
 void draw() 
 {
-  background(black);
-  rect(buttonX1, buttonY1, ButtonWidth1, ButtonHeight1); //DIV: "Click Me"
-  rect(buttonX2, buttonY2, ButtonWidth2, ButtonHeight2); //DIV: "Or Me"
-  if (rectON==true && ellipseON==false) rect(rectDisplayX, rectDisplayY, rectDisplayWidth, rectDisplayHeight); //DIV: Display Rectangle
-  //rect(ellipseX, ellipseY, ellipseXDiameter, ellipseYDiameter); //DIV: Display Ellipse
-  if (rectON==false && ellipseON==true) ellipse(x, y, xDiameter, yDiameter);
-  //
-  fill(orange);
-  textAlign(CENTER, CENTER);
-  textFont(Buttonwordfont, 25);
-  //
-  text(RectWords, buttonX1, buttonY1, ButtonWidth1, ButtonHeight1 );
-  text(EllipseWords, buttonX2, buttonY2, ButtonWidth2, ButtonHeight2);
-  fill(white);
+  GUI_draw();
+  textDraw();
 }//End draw
 //
 void keyPressed() {

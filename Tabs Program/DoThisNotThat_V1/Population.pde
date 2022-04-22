@@ -24,5 +24,4 @@ void population()
   y = ellipseRectYCenter;
   xDiameter = ellipseXDiameter;
   yDiameter = ellipseYDiameter;
-  Buttonwordfont = createFont("Corbel", 48);
 }//End population
