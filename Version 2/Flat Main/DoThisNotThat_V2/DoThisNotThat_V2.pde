@@ -74,6 +74,8 @@ void keyPressed() {
 void mousePressed() 
 {
   println("Before the Button:", "\tRect:", rectON, "\tEllipse", ellipseON);
+  //Note: "Third Button" is deleted due to Boolean Logic Error
+  //Need button specifically to Reset Variables
   if ( mouseX>=buttonX1 && mouseX<=buttonX1+ButtonWidth1 && mouseY>=buttonY1 && mouseY<=buttonY1+ButtonHeight1 ) {
     if (rectON==true) 
     {
